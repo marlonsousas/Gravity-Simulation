@@ -18,9 +18,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="include\menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\screens\earth_moon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\fonts\Arial.ttf" />
+    <Font Include="Assets\fonts\TechMono.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\planet.png">
@@ -29,5 +36,16 @@
     <Image Include="Assets\background.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Assets\space.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\menu.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\screens\earth_moon.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
