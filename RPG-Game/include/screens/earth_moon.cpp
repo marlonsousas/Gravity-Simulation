@@ -1,6 +1,7 @@
 ﻿// nova_tela.cpp
 #include <SFML/Graphics.hpp>
 #include "earth_moon.hpp"
+#include "MenuScreen.hpp"
 using namespace std;
 using namespace sf;
 
@@ -60,11 +61,11 @@ void corrigirPosicao(CircleShape& esferaMenor, const sf::Sprite& esferaMaior) {
 	esferaMenor.move(correcao);
 };
 
-NovaTela::NovaTela(sf::RenderWindow& window) : window(window) {
+EarthMoonScreen::EarthMoonScreen(sf::RenderWindow& window) : window(window) {
 	// Inicialize membros ou realize configurações necessárias para a nova tela
 }
 
-void NovaTela::run() {
+void EarthMoonScreen::run() {
 
 	//-------------------------------- INITIALIZE --------------------------------
 	sf::Font font2;
@@ -169,7 +170,7 @@ void NovaTela::run() {
 	float angleIncrement = 2 * 3.14 / numPoints;
 	float distortionAmount = 20.f; // Ajuste conforme necess�rio
 
-
+	MenuScreen MenuScreen(window);
 
 
 	// Lógica principal da nova tela
@@ -191,7 +192,8 @@ void NovaTela::run() {
 			sf::Vector2f mousePos(static_cast<float>(event.mouseButton.x), static_cast<float>(event.mouseButton.y));
 
 			if (backText.getGlobalBounds().contains(mousePos)) {
-				printf("Voltar");
+
+				MenuScreen.run();
 				exit(-1);
 			}
 

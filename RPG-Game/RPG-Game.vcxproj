@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="include\menu.cpp" />
     <ClCompile Include="include\screens\earth_moon.cpp" />
+    <ClCompile Include="include\screens\MenuScreen.cpp" />
+    <ClCompile Include="include\screens\solar_system.cpp" />
+    <ClCompile Include="include\scripts.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -28,13 +31,29 @@
     <Font Include="Assets\fonts\TechMono.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Assets\animate.png" />
+    <Image Include="Assets\asteroid.png" />
     <Image Include="Assets\background.png" />
+    <Image Include="Assets\marte_animate.png" />
+    <Image Include="Assets\mercurio.png" />
+    <Image Include="Assets\mercurio_animate.png" />
     <Image Include="Assets\planet.png" />
+    <Image Include="Assets\planetgif.gif" />
+    <Image Include="Assets\saturn_animate.png" />
+    <Image Include="Assets\sol.png" />
     <Image Include="Assets\space.png" />
+    <Image Include="Assets\sun.png" />
+    <Image Include="Assets\sun_animate.png" />
+    <Image Include="Assets\terra.png" />
+    <Image Include="Assets\terra_animate.png" />
+    <Image Include="Assets\urano_animate.png" />
+    <Image Include="Assets\venus_animate.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\menu.hpp" />
     <ClInclude Include="include\screens\earth_moon.hpp" />
+    <ClInclude Include="include\screens\MenuScreen.hpp" />
+    <ClInclude Include="include\screens\solar_system.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

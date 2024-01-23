@@ -1,7 +1,9 @@
 // menu.cpp
 #include "menu.hpp"
 
-Menu::Menu(sf::RenderWindow& window) : window(window), novaTela(window) {
+Menu::Menu(sf::RenderWindow& window) : window(window), EarthMoonScreen(window),
+            SolarSystemScreen(window), MenuScreen(window){
+
     if (!font.loadFromFile("Assets/fonts/TechMono.ttf")) {
         std::cerr << "Erro ao carregar a fonte.\n";
         std::exit(-1);
@@ -43,9 +45,7 @@ Menu::Menu(sf::RenderWindow& window) : window(window), novaTela(window) {
     
 }
 
-void Menu::selecionarOpcao1() {
-    novaTela.run();
-}
+
 
 void Menu::draw() {
     window.clear();
@@ -60,22 +60,5 @@ void Menu::draw() {
 }
 
 void Menu::handleEvent(sf::Event& event) {
-    if (event.type == sf::Event::MouseButtonPressed) {
-        if (event.mouseButton.button == sf::Mouse::Left) {
-            sf::Vector2f mousePos(static_cast<float>(event.mouseButton.x), static_cast<float>(event.mouseButton.y));
-
-            if (opcao1.getGlobalBounds().contains(mousePos)) {
-                opcao1.setCharacterSize(25);
-                selecionarOpcao1();
-            }
-            else if (opcao2.getGlobalBounds().contains(mousePos)) {
-                opcao1.setCharacterSize(25);
-                selecionarOpcao1();
-            }
-            else if (opcao3.getGlobalBounds().contains(mousePos)) {
-                opcao1.setCharacterSize(25);
-                selecionarOpcao1();
-            }
-        }
-    }
+    MenuScreen.run();
 }

@@ -5,15 +5,17 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "screens/earth_moon.hpp"
+#include "screens/solar_system.hpp"
+#include "screens/MenuScreen.hpp"
 
 class Menu {
 public:
     Menu(sf::RenderWindow& window);
 
+
     void draw();
     void handleEvent(sf::Event& event);
 
-    void selecionarOpcao1();
 
 private:
     sf::Font font;
@@ -21,7 +23,9 @@ private:
     sf::Text opcao2;
     sf::Text opcao3;
     sf::Text opcao4;
-    NovaTela novaTela;
+    EarthMoonScreen EarthMoonScreen;
+    SolarSystemScreen SolarSystemScreen;
+    MenuScreen MenuScreen;
     sf::Texture backgroundTexture;
     sf::Sprite background;
     sf::RenderWindow& window;  // Referência para o objeto RenderWindow da função main

@@ -4,9 +4,9 @@
 
 #include <SFML/Graphics.hpp>
 
-class NovaTela {
+class EarthMoonScreen {
 public:
-    NovaTela(sf::RenderWindow& window);
+    EarthMoonScreen(sf::RenderWindow& window);
 
     void run();  // Função principal da nova tela
 
