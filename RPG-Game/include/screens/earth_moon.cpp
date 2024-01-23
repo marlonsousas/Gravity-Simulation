@@ -183,7 +183,9 @@ void EarthMoonScreen::run() {
 			if (event.type == sf::Event::Closed)
 				window.close();
 
-
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+				MenuScreen.run();
+			}
 		}
 
 
@@ -194,7 +196,6 @@ void EarthMoonScreen::run() {
 			if (backText.getGlobalBounds().contains(mousePos)) {
 
 				MenuScreen.run();
-				exit(-1);
 			}
 
 			if (event.mouseButton.button == sf::Mouse::Left) {
@@ -223,7 +224,7 @@ void EarthMoonScreen::run() {
 
 		float distanciaColisao = std::sqrt(direcaoColisao.x * direcaoColisao.x + direcaoColisao.y * direcaoColisao.y);
 
-		earthSprite.rotate(std::sqrt(velocidade.x * velocidade.x + velocidade.y * velocidade.y) * 1.37);
+		earthSprite.rotate(std::sqrt(velocidade.x * velocidade.x + velocidade.y * velocidade.y) / 2);
 
 
 		if (verificarColisao(satelite, earthSprite)) {
@@ -264,7 +265,6 @@ void EarthMoonScreen::run() {
 		//window.draw(backgroundSprite);
 		window.draw(satelite);
 		window.draw(earthSprite);
-		window.draw(backText);
 		
 
 

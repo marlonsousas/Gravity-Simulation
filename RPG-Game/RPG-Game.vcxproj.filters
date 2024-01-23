@@ -90,6 +90,36 @@
     <Image Include="Assets\urano_animate.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Assets\sol2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\netuno_animate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\keyR.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\jupiter_animate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\black_hole.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\galaxy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\gif.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\keyEsc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\keyMouse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\logo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\menu.hpp">

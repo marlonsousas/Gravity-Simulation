@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "include/menu.hpp"
+#include <Windows.h>
 
 int main() {
     sf::ContextSettings settings;

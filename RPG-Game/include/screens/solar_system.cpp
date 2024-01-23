@@ -1,4 +1,6 @@
 ﻿// solar_system_screen.cpp
+#include <thread>
+#include <chrono>
 #include "solar_system.hpp"
 #include "MenuScreen.hpp"
 
@@ -79,7 +81,9 @@ private:
 };
 
 
-
+void resetZoom(float& zoomLevel) {
+	zoomLevel = 1.0f;
+}
 
 struct Planetas {
 	sf::Sprite sprite;
@@ -344,7 +348,7 @@ void SolarSystemScreen::run() {
 	sf::Clock clock;
 	sf::Time lastFrameTime = clock.getElapsedTime();
 
-
+	float zoomLevel = 1.0f; // Nível de zoom inicial
 	int count = 0;
 
 	// Lógica principal da nova tela
@@ -364,10 +368,18 @@ void SolarSystemScreen::run() {
 				else if (event.mouseWheelScroll.delta > 0) {
 					zoomFactor *= 1.1f;
 				}
+				
 
 				mainView.setSize(window.getDefaultView().getSize() / zoomFactor);
 			}
+			else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::R) {
+				zoomFactor = 1.f;
+				mainView.setSize(window.getDefaultView().getSize() / zoomFactor);
+			}
+
 			else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+				zoomFactor = 1.f;
+				mainView.setSize(window.getDefaultView().getSize() / zoomFactor);
 				MenuScreen.run();
 			}
 			else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::W) {
@@ -486,12 +498,6 @@ void SolarSystemScreen::run() {
 			}
 		}
 
-		for (float y = 0; y < window.getSize().y; y += backgroundSprite.getGlobalBounds().height) {
-			for (float x = 0; x < window.getSize().x; x += backgroundSprite.getGlobalBounds().width) {
-				backgroundSprite.setPosition(x, y);
-				window.draw(backgroundSprite);
-			}
-		}
 
 
 		window.setView(mainView);
