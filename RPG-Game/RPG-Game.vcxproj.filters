@@ -134,5 +134,8 @@
     <ClInclude Include="include\screens\MenuScreen.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\widgets\Slider.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

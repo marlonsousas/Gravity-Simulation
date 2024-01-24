@@ -111,6 +111,7 @@ void MenuScreen::run() {
 	sf::Text opcao2;
 	sf::Text opcao3;
 	sf::Text opcao4;
+	sf::Text opcao5;
 	sf::Text exit;
 
 
@@ -119,31 +120,37 @@ void MenuScreen::run() {
 	opcao1.setFont(font);
 	opcao1.setCharacterSize(30);
 	opcao1.setOrigin(opcao1.getLocalBounds().width / 2, opcao1.getLocalBounds().height / 2);
-	opcao1.setPosition(window.getSize().x / 2, window.getSize().y / 2 - 200);
+	opcao1.setPosition(window.getSize().x / 2, window.getSize().y / 2 - 150);
 
 	opcao2.setString("Solar System");
 	opcao2.setFont(font);
 	opcao2.setCharacterSize(30);
 	opcao2.setOrigin(opcao2.getLocalBounds().width / 2, opcao2.getLocalBounds().height / 2);
-	opcao2.setPosition(window.getSize().x / 2, window.getSize().y / 2 - 100);
+	opcao2.setPosition(window.getSize().x / 2, window.getSize().y / 2 - 75);
 
 	opcao3.setString("Galaxy Simulation");
 	opcao3.setFont(font);
 	opcao3.setCharacterSize(30);
 	opcao3.setOrigin(opcao3.getLocalBounds().width / 2, opcao3.getLocalBounds().height / 2);
-	opcao3.setPosition(window.getSize().x / 2, window.getSize().y / 2);
+	opcao3.setPosition(window.getSize().x / 2, window.getSize().y / 2 + 0);
 
-	opcao4.setString("Extras");
+	opcao4.setString("Options");
 	opcao4.setFont(font);
 	opcao4.setCharacterSize(30);
 	opcao4.setOrigin(opcao4.getLocalBounds().width / 2, opcao4.getLocalBounds().height / 2);
-	opcao4.setPosition(window.getSize().x / 2, window.getSize().y / 2 + 100);
+	opcao4.setPosition(window.getSize().x / 2, window.getSize().y / 2 + 75);
+
+	opcao5.setString("Extras");
+	opcao5.setFont(font);
+	opcao5.setCharacterSize(30);
+	opcao5.setOrigin(opcao5.getLocalBounds().width / 2, opcao5.getLocalBounds().height / 2);
+	opcao5.setPosition(window.getSize().x / 2, window.getSize().y / 2 + 150);
 
 	exit.setString("Exit");
 	exit.setFont(font);
 	exit.setCharacterSize(30);
 	exit.setOrigin(exit.getLocalBounds().width / 2, exit.getLocalBounds().height / 2);
-	exit.setPosition(window.getSize().x / 2, window.getSize().y / 2 + 200);
+	exit.setPosition(window.getSize().x / 2, window.getSize().y / 2 + 150 + 75);
 
 
 	// ---------------------- BACKGROUND --------------------------------------
@@ -168,7 +175,7 @@ void MenuScreen::run() {
 
 	sf::Texture keyRTexture;
 	sf::Sprite keyRSprite;
-	sf::Text keyRText("Reset Zoom", font, 20);
+	sf::Text keyRText("Reset Simulation", font, 20);
 	keyRText.setFillColor(sf::Color::White);
 
 	keyRTexture.loadFromFile("Assets/keyR.png");
@@ -227,6 +234,11 @@ void MenuScreen::run() {
 	sf::Clock clock;
 
 	int count = 0;
+
+	sf::Cursor arrowCursor;
+	arrowCursor.loadFromSystem(sf::Cursor::Arrow);
+
+	window.setMouseCursor(arrowCursor);
 
 	// Lógica principal da nova tela
 	while (window.isOpen())
@@ -291,12 +303,6 @@ void MenuScreen::run() {
 			}
 		}
 
-		for (float y = 0; y < window.getSize().y; y += backgroundSprite.getGlobalBounds().height) {
-			for (float x = 0; x < window.getSize().x; x += backgroundSprite.getGlobalBounds().width) {
-				backgroundSprite.setPosition(x, y);
-				window.draw(backgroundSprite);
-			}
-		}
 
 		blackHoleAnime.draw(window);
 
@@ -304,6 +310,7 @@ void MenuScreen::run() {
 		window.draw(opcao2);
 		window.draw(opcao3);
 		window.draw(opcao4);
+		window.draw(opcao5);
 
 		window.draw(keyRSprite);
 		window.draw(keyRText);

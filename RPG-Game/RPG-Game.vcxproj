@@ -64,6 +64,7 @@
     <ClInclude Include="include\screens\earth_moon.hpp" />
     <ClInclude Include="include\screens\MenuScreen.hpp" />
     <ClInclude Include="include\screens\solar_system.hpp" />
+    <ClInclude Include="include\widgets\Slider.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
